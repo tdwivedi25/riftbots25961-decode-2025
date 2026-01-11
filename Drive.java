@@ -20,8 +20,7 @@ public class Drive extends LinearOpMode {
         DcMotor Intake = hardwareMap.dcMotor.get("Intake");
         DcMotor Outtake = hardwareMap.dcMotor.get("Outtake");
         DcMotor flywheel = hardwareMap.dcMotor.get("flywheel");
-        Servo gate = hardwareMap.servo.get("gate");
-        CRServo thirdRow = hardwareMap.crservo.get("3rd");
+
         // Reverse the right side motors
         front_left_drive.setDirection(DcMotorSimple.Direction.FORWARD);
         back_left_drive.setDirection(DcMotorSimple.Direction.FORWARD);
@@ -102,13 +101,7 @@ public class Drive extends LinearOpMode {
             }
 
             // ========== GATE SERVO CONTROL ==========
-            if (gamepad1.dpad_down){
-                gate.setPosition(0);
-                thirdRow.setPower(1.0);
-            }
-            if (gamepad1.dpad_up){
-                gate.setPosition(0.35);
-            }
+
             flywheel.setPower(0.55);
             // ========== TELEMETRY ==========
             telemetry.addData("Intake Running", intakeRunning);
